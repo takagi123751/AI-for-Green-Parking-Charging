@@ -83,3 +83,21 @@ AI-for-Green-Parking-Charging/
 2. **对比度扩充**：升级为 4 组全维度对比：无优化基准、线性规划（理论最优上限）、遗传算法（启发式算法）、DQN 强化学习（AI 算法），评价指标覆盖成本、碳排放、绿电消纳率、弃光率、充电桩利用率 5 个维度。
 
 3. **工程化增强**：全模块化拆分，参数统一配置，自动输出多维度对比图表，完全符合 GitHub 开源项目规范。
+
+## AI for Green A Track final submission
+
+`A_track_v59_prediction_ensemble/` is the highest-scoring official development
+submission from this repository:
+
+- Official development score: **48.739 / 60**
+- Public 80:20 time-holdout demand MAE: **4.39924 kWh**
+- Public 80:20 time-holdout dwell MAE: **1.67520 hours**
+- Stable V50-B core for the world model, capacity intervention and online dispatch
+- Public `predict()` calibration using time-holdout-selected XGBoost and
+  LightGBM blends
+
+The submission exports `build_model(training)` and implements the five required
+methods: `predict`, `arrival_rate`, `act`, `forecast`, and `explain`.
+
+Local interface compatibility is provided by `acn_causal/student_api.py`.
+Official evaluation still supplies the organizer's authoritative module.
